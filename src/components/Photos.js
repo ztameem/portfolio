@@ -51,7 +51,7 @@ function Photos() {
           marginTop: "3px",
         }}
       >
-        Photos
+        Favorite Photos
       </Typography>
       <Box
         sx={{
