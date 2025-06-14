@@ -1,4 +1,4 @@
-# Stephen's Website
+# Tameem's Website
 Personal Website
 
 React, MUI, Vercel
