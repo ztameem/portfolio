@@ -130,7 +130,7 @@ function About() {
             component="div"
             sx={{ ...bodyStyle, paddingBottom: "15px" }}
           >
-            Computer Engineering ScB & Computer Science ScM Brown University
+            Computer Engineering B.S. & Computer Science M.S. Brown University
             2027
           </Typography>
           <Typography
