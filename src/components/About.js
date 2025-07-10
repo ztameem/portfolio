@@ -4,7 +4,7 @@ import Typography from "@mui/material/Typography";
 import IconButton from "@mui/material/IconButton";
 import { GitHub, Email, LinkedIn, Description } from "@mui/icons-material";
 import Listening from "../components/Listening";
-import resume from "../static/resume.pdf";
+// import resume from "../static/resume.pdf";
 import profile from "../static/profile.jpeg";
 
 const iconStyle = {
@@ -99,7 +99,7 @@ function About() {
             >
               <LinkedIn />
             </IconButton>
-            <IconButton
+            {/* <IconButton
               aria-label="Resume"
               component="a"
               href={resume}
@@ -108,7 +108,7 @@ function About() {
               sx={iconStyle}
             >
               <Description />
-            </IconButton>
+            </IconButton> */}
           </Box>
           <Box
             sx={{
