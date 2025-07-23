@@ -14,7 +14,7 @@ const companies = [
     title: "Software Engineering Intern",
     duration: "May 2025 - Present",
     location: "Providence, RI",
-    // link: "",
+    link: "https://innocentknowledge.com/",
   },
   {
     image: BrownLibrary,
