@@ -11,9 +11,9 @@ const companies = [
   {
     image: InnocentKnowledge,
     name: "Innocent Knowledege Digital Exhibition",
-    title: "Software Development Intern",
+    title: "Software Engineering Intern",
     duration: "May 2025 - Present",
-    location: "Monroe, MI",
+    location: "Providence, RI",
     // link: "",
   },
   {
@@ -21,7 +21,7 @@ const companies = [
     name: "Brown University Library Web Services",
     title: "Software Engineering Intern",
     duration: "Apr 2024 - Aug 2024",
-    location: "Providence, RI",
+    location: "Monroe, MI",
     link: "https://library.brown.edu/",
   },
   {
