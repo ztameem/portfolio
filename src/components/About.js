@@ -144,8 +144,7 @@ function About() {
               fontSize: "14px",
             }}
           >
-            Currently a SWE intern developing a digital exhibit for Innocent
-            Knowledge.
+            Currently developing a digital exhibit for Innocent Knowledge.
             <br />
             <br /> I'm passionate for tech that bridges 'people and place' in
             ways that tell their stories. Outside of that, I love to log

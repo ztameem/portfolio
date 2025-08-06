@@ -11,7 +11,7 @@ const companies = [
   {
     image: InnocentKnowledge,
     name: "Innocent Knowledege Digital Exhibition",
-    title: "Software Engineering Intern",
+    title: "Software Engineer",
     duration: "May 2025 - Present",
     location: "Providence, RI",
     link: "https://innocentknowledge.com/",
@@ -19,7 +19,7 @@ const companies = [
   {
     image: BrownLibrary,
     name: "Brown University Library Web Services",
-    title: "Software Engineering Intern",
+    title: "Software Engineer",
     duration: "Apr 2024 - Aug 2024",
     location: "Monroe, MI",
     link: "https://library.brown.edu/",
