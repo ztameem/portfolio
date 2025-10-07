@@ -144,7 +144,15 @@ function About() {
               fontSize: "14px",
             }}
           >
-            Currently developing a digital exhibit for Innocent Knowledge.
+            Currently maintaining a{" "}
+            <a
+              href="https://innocentknowledge.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              digital exhibit
+            </a>{" "}
+            for Innocent Knowledge.
             <br />
             <br /> I'm passionate for tech that bridges 'people and place' in
             ways that tell their stories. Outside of that, I love to log
