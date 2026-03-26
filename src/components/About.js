@@ -130,7 +130,7 @@ function About() {
             component="div"
             sx={{ ...bodyStyle, paddingBottom: "15px" }}
           >
-            Computer Science & Comparitive Literature Brown University
+            Computer Science & Comparative Literature Brown University
           </Typography>
           <Typography
             variant="body"
