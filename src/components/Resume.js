@@ -38,9 +38,8 @@ const schools = [
   {
     image: BrownU,
     name: "Brown University",
-    title:
-      "Bachelor of Computer Engineering & Concurrent Master of Computer Science",
-    duration: "Aug 2023 - May 2027",
+    title: "B.S. Computer Science & B.A. Comparative Literature",
+    duration: "",
     location: "Providence, RI",
     link: "https://www.brown.edu/",
   },

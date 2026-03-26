@@ -130,8 +130,7 @@ function About() {
             component="div"
             sx={{ ...bodyStyle, paddingBottom: "15px" }}
           >
-            Computer Engineering BSc & Computer Science MSc Brown University
-            2027
+            Computer Science & Comparitive Literature Brown University
           </Typography>
           <Typography
             variant="body"
