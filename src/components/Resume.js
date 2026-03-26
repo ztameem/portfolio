@@ -38,7 +38,7 @@ const schools = [
   {
     image: BrownU,
     name: "Brown University",
-    title: "B.S. Computer Science & B.A. Comparative Literature",
+    title: "Sc.B. Computer Science & A.B. Comparative Literature",
     duration: "",
     location: "Providence, RI",
     link: "https://www.brown.edu/",
