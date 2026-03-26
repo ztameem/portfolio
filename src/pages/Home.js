@@ -1,13 +1,11 @@
-import React, { useState, useEffect } from "react";
-import { Box, CssBaseline } from "@mui/material";
-import bgday from "../static/backgrounds/bgday.webp";
-import bgnight from "../static/backgrounds/bgnight.webp";
-import bgtwilight from "../static/backgrounds/bgtwilight.webp";
+import React, { useState } from "react";
 import Typography from "@mui/material/Typography";
-import { GlobalStyles } from "@mui/material";
+import { Link as RouterLink } from "react-router-dom";
 import About from "../components/About";
 import Resume from "../components/Resume";
 import Photos from "../components/Photos";
+import SiteBackground from "../components/SiteBackground";
+import { Box } from "@mui/material";
 
 const textStyle = {
   color: "#feffe9",
@@ -39,70 +37,19 @@ const textStyle = {
 
 function Home() {
   const [page, setPage] = useState("about");
-  const [background, setBackground] = useState(bgnight);
-  const [isVisible, setIsVisible] = useState(true);
-
-  const handleClose = (event) => {
-    event.stopPropagation();
-    setIsVisible(false);
-  };
-
-  const handleOpen = () => {
-    setIsVisible(true);
-  };
-
-  useEffect(() => {
-    const currentTime = new Date();
-    const hours = currentTime.getHours();
-
-    if (hours >= 10 && hours < 18) {
-      setBackground(bgday);
-    } else if (hours === 0) {
-      setBackground(bgnight);
-    } else if ((hours >= 18 && hours < 21) || (hours >= 5 && hours < 10)) {
-      setBackground(bgtwilight);
-    }
-  }, []);
 
   return (
     <>
-      <CssBaseline />
-      <GlobalStyles
-        styles={{ body: { fontFamily: "Inconsolata, monospace" } }}
-      />
-      <Box
-        onClick={handleOpen}
-        sx={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          width: "100%",
-          minWidth: "260px",
-          minHeight: "650px",
-          height: { xs: "1100px", md: "100vh" },
-          backgroundImage: `url(${background})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundRepeat: "no-repeat",
-        }}
-      >
-        {isVisible && (
-          <Box
-            sx={{
-              width: { xs: "300px", sm: "650px", md: "800px" },
-              height: { xs: "1000px", sm: "850px", md: "540px" },
-              backgroundColor: "white",
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-              color: "black",
-              fontSize: "24px",
-            }}
-          >
-            <nav
-              style={{
+      <SiteBackground>
+        {({ handleClose }) => (
+          <>
+            <Box
+              component="nav"
+              sx={{
                 border: "2px solid black",
                 display: "flex",
+                flexWrap: "wrap",
+                alignItems: "stretch",
                 backgroundColor: "#86a953",
                 width: "100%",
                 marginBottom: "auto",
@@ -114,14 +61,21 @@ function Home() {
               <Typography onClick={() => setPage("resume")} sx={textStyle}>
                 Professional Experience
               </Typography>
+              <Typography onClick={() => setPage("photos")} sx={textStyle}>
+                Photography
+              </Typography>
               <Typography
-                onClick={() => setPage("photos")}
+                component={RouterLink}
+                to="/translations"
                 sx={{
                   ...textStyle,
                   borderRight: { xs: "none", sm: "2px solid black" },
+                  textDecoration: "none",
+                  display: "inline-flex",
+                  alignItems: "center",
                 }}
               >
-                Photography
+                Translations
               </Typography>
               <Box
                 onClick={handleClose}
@@ -138,14 +92,14 @@ function Home() {
                     backgroundColor: "#bf0000",
                   },
                 }}
-              ></Box>
-            </nav>
+              />
+            </Box>
             {page === "about" && <About />}
             {page === "resume" && <Resume />}
             {page === "photos" && <Photos />}
-          </Box>
+          </>
         )}
-      </Box>
+      </SiteBackground>
     </>
   );
 }

@@ -2,7 +2,7 @@ import React from "react";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import IconButton from "@mui/material/IconButton";
-import { GitHub, Email, LinkedIn, Description } from "@mui/icons-material";
+import { GitHub, Email, LinkedIn } from "@mui/icons-material";
 import Listening from "../components/Listening";
 // import resume from "../static/resume.pdf";
 import profile from "../static/profile.jpeg";
