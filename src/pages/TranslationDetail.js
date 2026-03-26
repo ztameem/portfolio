@@ -12,7 +12,10 @@ import {
 import CloseIcon from "@mui/icons-material/Close";
 import SiteBackground from "../components/SiteBackground";
 import TranslationsNav from "../components/TranslationsNav";
-import { getTranslationById, isTranslationComplete } from "../data/translations";
+import {
+  getTranslationById,
+  isTranslationComplete,
+} from "../data/translations";
 
 const arabicTitleSx = {
   fontFamily: '"Noto Sans Arabic", "Geeza Pro", "Arial Unicode MS", sans-serif',
@@ -35,10 +38,7 @@ const sectionLabelSx = {
 
 function firstNLines(text, n) {
   if (!text || !String(text).trim()) return "";
-  return String(text)
-    .split("\n")
-    .slice(0, n)
-    .join("\n");
+  return String(text).split("\n").slice(0, n).join("\n");
 }
 
 function TranslationDetail() {
@@ -50,8 +50,12 @@ function TranslationDetail() {
     return <Navigate to="/translations" replace />;
   }
 
-  const hasFullArabic = Boolean(work.originalExcerpt && String(work.originalExcerpt).trim());
-  const hasListingArabic = Boolean(work.listingExcerptAr && String(work.listingExcerptAr).trim());
+  const hasFullArabic = Boolean(
+    work.originalExcerpt && String(work.originalExcerpt).trim(),
+  );
+  const hasListingArabic = Boolean(
+    work.listingExcerptAr && String(work.listingExcerptAr).trim(),
+  );
 
   const showOriginalSection = work.sideBySideExcerpt
     ? hasFullArabic || hasListingArabic
@@ -59,8 +63,8 @@ function TranslationDetail() {
 
   const useSideBySide = Boolean(
     work.sideBySideExcerpt &&
-      work.translationBody?.trim() &&
-      (hasFullArabic || hasListingArabic),
+    work.translationBody?.trim() &&
+    (hasFullArabic || hasListingArabic),
   );
 
   const originalPreviewLines = (() => {
@@ -73,13 +77,22 @@ function TranslationDetail() {
     return firstNLines(work.listingExcerptAr, 2);
   })();
 
-  const arabicInModal = hasFullArabic ? work.originalExcerpt : hasListingArabic ? work.listingExcerptAr : "";
+  const arabicInModal = hasFullArabic
+    ? work.originalExcerpt
+    : hasListingArabic
+      ? work.listingExcerptAr
+      : "";
   const arabicModalIsPartial = !hasFullArabic && hasListingArabic;
 
   return (
     <SiteBackground
       panelSx={{
-        width: { xs: "min(95vw, 380px)", sm: "min(92vw, 760px)", md: "1000px", lg: "1040px" },
+        width: {
+          xs: "min(95vw, 380px)",
+          sm: "min(92vw, 760px)",
+          md: "1000px",
+          lg: "1040px",
+        },
         height: "auto",
         minHeight: { xs: "720px", md: "min(90vh, 880px)" },
         maxHeight: { xs: "none", md: "92vh" },
@@ -119,7 +132,9 @@ function TranslationDetail() {
                 }}
               >
                 <Typography sx={sectionLabelSx}>Title — Arabic</Typography>
-                <Typography sx={{ ...arabicTitleSx, mb: 2 }}>{work.titleAr}</Typography>
+                <Typography sx={{ ...arabicTitleSx, mb: 2 }}>
+                  {work.titleAr}
+                </Typography>
                 <Typography sx={sectionLabelSx}>Title — English</Typography>
                 <Typography
                   sx={{
@@ -145,7 +160,11 @@ function TranslationDetail() {
                     {work.poetAr && (
                       <Box
                         component="span"
-                        sx={{ ...arabicTitleSx, fontSize: "14px", display: "inline" }}
+                        sx={{
+                          ...arabicTitleSx,
+                          fontSize: "14px",
+                          display: "inline",
+                        }}
                       >
                         {work.poetAr}
                       </Box>
@@ -156,7 +175,9 @@ function TranslationDetail() {
 
               {showOriginalSection && (
                 <Box>
-                  <Typography sx={sectionLabelSx}>Original (excerpt)</Typography>
+                  <Typography sx={sectionLabelSx}>
+                    Original (excerpt)
+                  </Typography>
                   <Typography
                     sx={{
                       ...arabicTitleSx,
@@ -284,7 +305,9 @@ function TranslationDetail() {
                   boxSizing: "border-box",
                 }}
               >
-                <Typography sx={{ ...sectionLabelSx, color: "#444" }}>English</Typography>
+                <Typography sx={{ ...sectionLabelSx, color: "#444" }}>
+                  English
+                </Typography>
                 <Typography
                   sx={{
                     fontFamily: "Inconsolata, monospace",
@@ -308,7 +331,9 @@ function TranslationDetail() {
                   boxSizing: "border-box",
                 }}
               >
-                <Typography sx={{ ...sectionLabelSx, color: "#444" }}>Arabic</Typography>
+                <Typography sx={{ ...sectionLabelSx, color: "#444" }}>
+                  Arabic
+                </Typography>
                 {arabicModalIsPartial && (
                   <Typography
                     sx={{
@@ -319,8 +344,7 @@ function TranslationDetail() {
                       lineHeight: 1.5,
                     }}
                   >
-                    Opening lines only here. When you have the full Arabic text, put it in
-                    originalExcerpt for this piece so it fills this column.
+                    Opening lines only here.
                   </Typography>
                 )}
                 <Typography
